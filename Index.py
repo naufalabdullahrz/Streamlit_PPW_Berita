@@ -18,7 +18,7 @@ def main():
     # Input Text Area
     input_text = st.text_area('Masukkan berita yang ingin klasifikasi:','')
 
-    if st.button('Klasifikasi'):
+    if st.button('Prediksi'):
         # Transformasi TF-IDF
         vectorized_input = tfidf_vectorizer.transform([input_text])
 
@@ -29,7 +29,7 @@ def main():
         prediction = best_classifier_model.predict(input_lda)
 
         # Menampilkan hasil prediksi
-        st.write(f'Hasil Klasifikasi: {prediction[0]}')
+        st.write(f'Hasil Prediksi: {prediction[0]}')
 
 if __name__ == '__main__':
     main()
